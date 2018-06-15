@@ -13,11 +13,13 @@ import { AgmCoreModule } from '@agm/core';
 import { AppComponent } from './app.component';
 
 import { MapComponent } from './components/map/map.component';
+import { AddPOIComponent } from './components/add-poi/add-poi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    AddPOIComponent
   ],
   imports: [
     BrowserModule,
