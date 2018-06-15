@@ -11,7 +11,6 @@ import { AgmCoreModule } from '@agm/core';
 
 // components
 import { AppComponent } from './app.component';
-
 import { MapComponent } from './components/map/map.component';
 
 @NgModule({
