@@ -10,8 +10,8 @@ export class POI {
   longitude: number;
   type: POIType;
   openingHours: OpeningHour[];
-  likesCount: number;
-  dislikesCount: number;
+  likesCount?: number;
+  dislikesCount?: number;
   description: string;
-  image: object;
+  image?: object;
 }

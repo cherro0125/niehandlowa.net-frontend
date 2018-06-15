@@ -1,5 +1,5 @@
 export interface OpeningHour {
-    id: number;
+    id?: number;
     dayOfWeek: number;
     openingTime: Date;
     closingTime: Date;

@@ -1,9 +1,155 @@
-.example-card {
-  max-width: 300px;
+table{
+  width: 100%;
 }
 
-.example-header-image {
-  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
-  background-image: url('https://i.ytimg.com/vi/lHWRfCxxe4o/maxresdefault.jpg');
+.main-view {
+  width: 100%;
+  height: 100vh !important;
+  background: url("../../../assets/bgView.jpg");
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+.main-view .center-box {
+  width: 110vh;
+  margin-top: 10vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+}
+.main-view .center-box .search-bar {
+  z-index: 100;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 7vh;
+  border-top-left-radius: 5px;
+  border-top-left-radius: 5px;
+  margin-bottom: 11vh;
+  padding: 0vh 1vh !important;
+  right: 0;
+  width: 80vh;
+  background: #ffffff;
+}
+.main-view .center-box .search-bar .search-field {
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+}
+.main-view .center-box .content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: -5vh;
+  padding-right: 1vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.poi-item {
+  width: 30vh;
+  max-height: 60vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  margin-bottom: 10vh;
+  background: white;
+}
+.poi-item mat-card-header {
+  width: 100%;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+.poi-item mat-card-header .matCardAvatar {
+  width: 25vh;
+  min-height: 20vh;
+  max-height: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.poi-item mat-card-header .matCardAvatar img {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.poi-item mat-card-content {
+  width: 100%;
+}
+.poi-item mat-card-content mat-card-title {
+  display: block;
+  text-align: center;
+}
+.poi-item mat-card-content mat-card-subtitle {
+  display: block;
+  width: 100%;
+  font-size: 1.5vh !important;
+  color: black;
+}
+.poi-item mat-card-content mat-card-subtitle .static-text {
+  color: #ac7600;
+  font-size: 1.7vh;
+}
+.poi-item mat-card-actions {
+  width: 100%;
+  text-align: center;
+}
+.poi-item mat-card-actions button {
+  font-size: 2vh !important;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: #242424;
+  color: white;
+  padding: .25vh 3.4vh !important;
+  outline: none;
+  -webkit-transition: color .3s linear, background .3s linear;
+  transition: color .3s linear, background .3s linear;
+}
+.poi-item mat-card-actions button:hover {
+  color: #242424;
+  background: white;
+}
+
