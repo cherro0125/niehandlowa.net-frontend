@@ -8,22 +8,25 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import { MatInputModule } from '@angular/material/input';
 
 // components
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
+import { MapViewComponent } from './views/map-view/map-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    MapViewComponent
   ],
   imports: [
-    BrowserModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatInputModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDKTZ15_EjqEOLG4e72RR4R3XrCfykOXb8'
     }),

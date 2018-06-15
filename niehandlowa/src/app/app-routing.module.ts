@@ -2,11 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { MapComponent } from './components/map/map.component';
+
+// components
+import { MapViewComponent } from './views/map-view/map-view.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'map', component: MapComponent }
+  { path: 'map', component: MapViewComponent }
 ];
 
 @NgModule({
