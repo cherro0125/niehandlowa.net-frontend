@@ -101,7 +101,7 @@ a {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden;
-  background-image: url("../../../assets/bg.jpg");
+  background-image: url("../../../assets/bgView.jpg");
   background-size: cover;
   background-repeat: no-repeat !important;
   display: -webkit-box;
