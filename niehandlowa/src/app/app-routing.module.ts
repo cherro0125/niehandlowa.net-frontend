@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
+import { MapComponent } from './components/map/map.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
-  {path: 'test', component: TestComponent}
+  { path: '', component: AppComponent },
+  { path: 'map', component: MapComponent }
 ];
 
 @NgModule({
