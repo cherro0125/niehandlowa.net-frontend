@@ -12,7 +12,7 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.3",
-    "@angular/animations": "^6.0.0",
+    "@angular/animations": "^6.0.5",
     "@angular/cdk": "^6.2.0",
     "@angular/common": "^6.0.0",
     "@angular/compiler": "^6.0.0",
@@ -29,6 +29,7 @@
     "core-js": "^2.5.4",
     "jquery-easing": "0.0.1",
     "magnific-popup": "^1.1.0",
+    "ngx-toastr": "^8.8.0",
     "rxjs": "^6.0.0",
     "scrollreveal": "^3.4.0",
     "startbootstrap-creative": "^4.0.0",
