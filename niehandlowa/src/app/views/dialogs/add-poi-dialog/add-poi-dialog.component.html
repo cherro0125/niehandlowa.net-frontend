@@ -1,23 +1,47 @@
-<div class="form">
-  <form (ngSubmit)="onSubmit()">
-    <div class="center-box">
-      <mat-form-field class="example-full-width">
-        <label for="name">Nazwa:</label>
-        <input matInput [(ngModel)]="newPoi.name" type="text" name="name" id="name" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <label for="address">Adres:</label>
-        <input matInput [(ngModel)]="newPoi.address" type="text" name="address" id="address" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <label for="owner">Właściciel:</label>
-        <input matInput [(ngModel)]="newPoi.owner" type="text" name="owner" id="owner" required>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <label for="description">Opis:</label>
-        <textarea matInput [(ngModel)]="newPOI.description" name="description" id="description"></textarea>
-      </mat-form-field>
-      <button type="submit" mat-button >DODAJ</button>
-    </div>
-  </form>
+<h1 mat-dialog-title>
+  Dodaj punkt
+</h1>
+
+<div mat-dialog-content>
+  <div class="map-container">
+    <app-map-view></app-map-view>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Nazwa</mat-label>
+    <input matInput [(ngModel)]="data.poi.name" type="text" placeholder="Nazwa">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Właściciel</mat-label>
+    <input matInput [(ngModel)]="data.poi.owner" type="text" placeholder="Właściciel">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Opis</mat-label>
+    <textarea matInput [(ngModel)]="data.poi.description" placeholder="Opis"></textarea>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Nazwa</mat-label>
+    <mat-select placeholder="Typ miejsca">
+      <mat-option *ngFor="let type of this._types" [value]="type.value" [(ngModel)]="data.poi.type">
+        {{type.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Adres</mat-label>
+    <input matInput [(ngModel)]="data.poi.address" type="text" placeholder="Adres">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Właściciel</mat-label>
+    <input matInput [(ngModel)]="data.poi.owner" type="text" placeholder="Właściciel">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Opis</mat-label>
+    <textarea matInput [(ngModel)]="data.poi.description" placeholder="Opis"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button>Dodaj</button>
+  <button mat-button>Wyjdź</button>
 </div>

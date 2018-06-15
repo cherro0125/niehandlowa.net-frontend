@@ -1,13 +1,14 @@
 import { OpeningHour } from "./OpeningHour";
+import { POIType } from "./POIType";
 
-export default class POI {
+export class POI {
   id: number;
   name: string;
   owner: string;
   address: string;
   latitude: number;
   longitude: number;
-  type: number;
+  type: POIType;
   openingHours: OpeningHour[];
   likesCount: number;
   dislikesCount: number;

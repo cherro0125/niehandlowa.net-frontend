@@ -9,4 +9,10 @@
   <mat-hint>Hint</mat-hint>
 </mat-form-field>
 
-<app-map [lat]="this.lat" [lng]="this.lng" [name]="this.name"></app-map>
+<agm-map [latitude]="this.lat" [longitude]="this.lng">
+  <agm-marker [latitude]="this.lat" [longitude]="this.lng">
+    <agm-info-window [disableAutoPan]="true">
+      {{this.name}}
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

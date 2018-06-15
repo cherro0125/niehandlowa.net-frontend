@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-import POI from '../../../models/POI';
+import { Component, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { POI } from '../../../models/POI';
 import { ToastrService } from 'ngx-toastr';
 import { PoiService } from '../../../services/poi.service';
 
@@ -10,11 +10,19 @@ import { PoiService } from '../../../services/poi.service';
   styleUrls: ['./add-poi-dialog.component.css']
 })
 export class AddPoiDialogComponent {
-  public newPoi: POI;
+  public newPoi: POI = new POI();
 
-  constructor(public dialogRef: MatDialogRef<AddPoiDialogComponent>,
-    private _toastrService: ToastrService, private _poiService: PoiService) {
-    this.newPoi = new POI();
+  private _types: { value: number, name: string }[] = [{
+    value: 1, name: "Sklep",
+  }, {
+    value: 2, name: "Galeria handlowa"
+  }]
+
+  constructor(
+    public dialogRef: MatDialogRef<AddPoiDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private _toastrService: ToastrService,
+    private _poiService: PoiService) {
   }
 
   closeDialog() {

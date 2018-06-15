@@ -5,21 +5,15 @@
   <button (click)="searchButtonOnClick()" mat-icon-button matSuffix color="primary">
     <mat-icon>search</mat-icon>
   </button>
-
-
 </mat-form-field>
 
+<button (click)="addPoiOnClick()" mat-button color="primary">dodaj</button>
+
 <!-- <table mat-table [dataSource]="poiList" class="mat-elevation-z8">
-
-
-
-
-
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef> Nazwa </th>
     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
   </ng-container>
-
 
   <ng-container matColumnDef="address">
     <th mat-header-cell *matHeaderCellDef> Adres </th>
@@ -52,10 +46,10 @@
     <mat-card-title>Biedronka</mat-card-title>
     <mat-card-subtitle>Własciciel: Janusz Nosacz</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image  src="https://i.ytimg.com/vi/lHWRfCxxe4o/maxresdefault.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image src="https://i.ytimg.com/vi/lHWRfCxxe4o/maxresdefault.jpg" alt="Photo of a Shiba Inu">
   <mat-card-content>
     <p>
-     Kurła kiedys to było
+      Kurła kiedys to było
     </p>
   </mat-card-content>
   <mat-card-actions>

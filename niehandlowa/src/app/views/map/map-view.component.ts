@@ -20,6 +20,8 @@ export class MapViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.lat = 50.8660773;
+    this.lng = 20.6285676;
   }
 
   searchButtonOnClick() {
