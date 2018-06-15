@@ -20,6 +20,7 @@ import { MapViewComponent } from './views/map/map-view.component';
 import { AddPOIComponent } from './views/add-poi/add-poi.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { MapService } from './services/map.service';
+import { PoiListComponent } from './views/poi-list/poi-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MapService } from './services/map.service';
     MapComponent,
     MapViewComponent,
     AddPOIComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    PoiListComponent
   ],
   imports: [
     BrowserModule,

@@ -11,9 +11,9 @@ import { ToastrService } from 'ngx-toastr';
 export class MapViewComponent implements OnInit {
   public adress: string;
 
-  private _lat: number;
-  private _lng: number;
-  private _name: string;
+  public lat: number;
+  public lng: number;
+  public name: string;
 
   constructor(private _mapService: MapService,
     private _toastr: ToastrService) {
@@ -31,9 +31,9 @@ export class MapViewComponent implements OnInit {
           alert(element.geometry.location.lng);
       });
       if (data.results[0] !== undefined) {
-        this._lat = data.results[0].geometry.location.lat;
-        this._lng = data.results[0].geometry.location.lng;
-        this._name = data.results[0].formatted_address;
+        this.lat = data.results[0].geometry.location.lat;
+        this.lng = data.results[0].geometry.location.lng;
+        this.name = data.results[0].formatted_address;
       } else {
         setTimeout(() => this._toastr.error('Nie odnaleziono lokalizacji', 'Błąd!'));
       }
