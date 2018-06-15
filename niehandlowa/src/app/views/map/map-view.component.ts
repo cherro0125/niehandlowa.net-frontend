@@ -16,8 +16,7 @@ export class MapViewComponent implements OnInit {
   }
 
   searchButtonOnClick() {
-    alert(this.adress)
-    // this._mapService.getCoordsByAdress(this.adress)
-    //   .subscribe(data => alert(JSON.stringify(data)));
+    this._mapService.getCoordsByAdress(this.adress)
+      .subscribe(data => alert(JSON.stringify(data)));
   }
 }
