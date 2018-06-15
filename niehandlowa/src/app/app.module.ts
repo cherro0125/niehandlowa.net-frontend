@@ -16,15 +16,17 @@ import { ToastrModule } from 'ngx-toastr';
 // components
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
-import { MapViewComponent } from './views/map-view/map-view.component';
+import { MapViewComponent } from './views/map/map-view.component';
 import { AddPOIComponent } from './components/add-poi/add-poi.component';
+import { LandingPageComponent } from './views/landing-page/landing-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MapViewComponent,
-    AddPOIComponent
+    AddPOIComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,7 @@ import { AddPOIComponent } from './components/add-poi/add-poi.component';
     }),
     NgbModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
