@@ -1,5 +1,5 @@
-import { OpeningHour } from "./OpeningHour";
-import { POIType } from "./POIType";
+import { OpeningHour } from './OpeningHour';
+import { POIType } from './POIType';
 
 export class POI {
   id: number;

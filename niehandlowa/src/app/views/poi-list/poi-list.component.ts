@@ -15,13 +15,7 @@ export class PoiListComponent implements OnInit {
     public newPoi: POI;
   displayedColumns = [ 'name', 'address', 'owner', 'description', 'openHours', 'other'];
 
-  ngOnInit() {
-    this.poiList = [
-      // // tslint:disable-next-line:max-line-length
-      // {  id: 1 , name: 'Biedronka' , address: 'Żelazna 2' , owner: 'Janusz Nosacz'  , description: 'Wincyj bimbru' },
-      // {  id: 1 , name: 'Biedronka' , address: 'Żelazna 2' , owner: 'Janusz Nosacz'  , description: 'Wincyj bimbru' }
-    ];
-  }
+
 
     constructor(
         public dialog: MatDialog,
