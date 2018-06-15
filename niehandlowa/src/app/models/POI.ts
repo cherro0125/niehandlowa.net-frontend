@@ -1,12 +1,16 @@
-export default class POI {
-  public id: number;
-  public name: string;
-  public address: string;
-  public owner: string;
-  public longitude?: number;
-  public latitude?: number;
-  public description?: string;
-  public openDate?: Date;
-  public closeDate?: Date;
+import { OpeningHour } from "./OpeningHour";
 
+export default class POI {
+  id: number;
+  name: string;
+  owner: string;
+  address: string;
+  latitude: number;
+  longitude: number;
+  type: number;
+  openingHours: OpeningHour[];
+  likesCount: number;
+  dislikesCount: number;
+  description: string;
+  image: object;
 }

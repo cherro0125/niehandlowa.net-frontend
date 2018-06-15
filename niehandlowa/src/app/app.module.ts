@@ -18,22 +18,19 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import { MapViewComponent } from './views/map/map-view.component';
-import { AddPOIComponent } from './views/add-poi/add-poi.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { MapService } from './services/map.service';
 import { PoiListComponent } from './views/poi-list/poi-list.component';
-import { PoiDialogComponent } from './views/poi-dialog/poi-dialog.component';
 import { AddPoiDialogComponent } from './views/dialogs/add-poi-dialog/add-poi-dialog.component';
+import { PoiService } from './services/poi.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MapViewComponent,
-    AddPOIComponent,
     LandingPageComponent,
     PoiListComponent,
-    PoiDialogComponent,
     AddPoiDialogComponent
   ],
   imports: [
