@@ -14,12 +14,14 @@ import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import { MapViewComponent } from './views/map-view/map-view.component';
+import { AddPOIComponent } from './components/add-poi/add-poi.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MapViewComponent
+    AddPOIComponent
   ],
   imports: [
     BrowserModule,
