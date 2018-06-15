@@ -9,6 +9,10 @@ import { MapService } from '../../services/map.service';
 export class MapViewComponent implements OnInit {
   public adress: string;
 
+  private _lat: number;
+  private _lng: number;
+  private _name: string;
+
   constructor(private _mapService: MapService) {
   }
 
@@ -17,6 +21,15 @@ export class MapViewComponent implements OnInit {
 
   searchButtonOnClick() {
     this._mapService.getCoordsByAdress(this.adress)
-      .subscribe(data => alert(JSON.stringify(data)));
+      .subscribe(data => {
+        data.results.forEach(element => {
+            alert(element.geometry.location.lat);
+            alert(element.geometry.location.lng);
+        });
+
+        this._lat = data.results[0].geometry.location.lat;
+        this._lng = data.results[0].geometry.location.lng;
+        this._name = data.results[0].formatted_address;
+      });
   }
 }
