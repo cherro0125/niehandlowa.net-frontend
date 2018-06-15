@@ -1,69 +1,50 @@
 <form (ngSubmit)="onSubmit(addpoiform)" #addpoiform="ngForm">
-  <!-- public id: number,
-    public name: string,
-    public address: string,
-    public owner: string,
-    public longitude: number,
-    public latitude: number,
-    public description: string,
-    public openDate: Date,
-    public closeDate: Date -->
   <div style="display:inline-grid;margin-left: 45%;margin-right: auto;">
     <mat-form-field class="example-full-width">
-      <!-- <label for="name">Nazwa:</label> -->
       <input matInput [(ngModel)]="newPOI.name" type="text" name="name" id="name" placeholder="Nazwa:" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <!-- <label for="address">Adres:</label> -->
       <input matInput [(ngModel)]="newPOI.address" type="text" name="address" id="address" placeholder="Adres:" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <!-- <label for="owner">Właściciel:</label> -->
       <input matInput [(ngModel)]="newPOI.owner" type="text" name="owner" id="owner" placeholder="Właściciel:" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <!-- <label for="description">Opis:</label> -->
       <textarea matInput [(ngModel)]="newPOI.description" name="description" placeholder="Opis:" id="description"></textarea>
     </mat-form-field>
 
-  <div class="static-logo"><a href="">
-    <span style="font-weight: bold">NieHandlowa</span>.net
-  </a></div>
+    <div class="static-logo">
+      <a href="">
+        <span style="font-weight: bold">NieHandlowa</span>.net
+      </a>
+    </div>
 
-  <div class="form">
-    <form (ngSubmit)="onSubmit()">
-      <!-- public id: number,
-            public name: string,
-            public address: string,
-            public owner: string,
-            public longitude: number,
-            public latitude: number,
-            public description: string,
-            public openDate: Date,
-            public closeDate: Date -->
-      <div class="center-box">
-        <mat-form-field class="example-full-width">
-          <label for="name">Nazwa:</label>
-          <input matInput [(ngModel)]="newPOI.name" type="text" name="name" id="name" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <label for="address">Adres:</label>
-          <input matInput [(ngModel)]="newPOI.address" type="text" name="address" id="address" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <label for="owner">Właściciel:</label>
-          <input matInput [(ngModel)]="newPOI.owner" type="text" name="owner" id="owner" required>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <label for="description">Opis:</label>
-          <textarea matInput [(ngModel)]="newPOI.description" name="description" id="description"></textarea>
-        </mat-form-field>
-        <button type="submit" mat-button>DODAJ</button>
-      </div>
-    </form>
-  </div>
+    <div class="form">
+      <form (ngSubmit)="onSubmit()">
+        <div class="center-box">
+          <mat-form-field class="example-full-width">
+            <label for="name">Nazwa:</label>
+            <input matInput [(ngModel)]="newPOI.name" type="text" name="name" id="name" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <label for="address">Adres:</label>
+            <input matInput [(ngModel)]="newPOI.address" type="text" name="address" id="address" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <label for="owner">Właściciel:</label>
+            <input matInput [(ngModel)]="newPOI.owner" type="text" name="owner" id="owner" required>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <label for="description">Opis:</label>
+            <textarea matInput [(ngModel)]="newPOI.description" name="description" id="description"></textarea>
+          </mat-form-field>
+          <button type="submit" mat-button>DODAJ</button>
+        </div>
+      </form>
+    </div>
 
-  <div class="previous">
-    <a class="back" href="">Powrót</a>
+    <div class="previous">
+      <a class="back" href="">Powrót</a>
+    </div>
   </div>
-</main>
+</form>
