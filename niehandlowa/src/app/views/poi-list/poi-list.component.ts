@@ -20,6 +20,10 @@ export class PoiListComponent implements OnInit {
     ];
   }
 
+  addPoiOnClick() {
+    let dialog = dialog.open(poi)
+  }
+
   public searchButtonOnClick() {
 
   }
