@@ -1,0 +1,23 @@
+<div class="form">
+  <form (ngSubmit)="onSubmit()">
+    <div class="center-box">
+      <mat-form-field class="example-full-width">
+        <label for="name">Nazwa:</label>
+        <input matInput [(ngModel)]="newPoi.name" type="text" name="name" id="name" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <label for="address">Adres:</label>
+        <input matInput [(ngModel)]="newPoi.address" type="text" name="address" id="address" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <label for="owner">Właściciel:</label>
+        <input matInput [(ngModel)]="newPoi.owner" type="text" name="owner" id="owner" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <label for="description">Opis:</label>
+        <textarea matInput [(ngModel)]="newPOI.description" name="description" id="description"></textarea>
+      </mat-form-field>
+      <button type="submit" mat-button >DODAJ</button>
+    </div>
+  </form>
+</div>

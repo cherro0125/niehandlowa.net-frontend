@@ -6,8 +6,8 @@ import { PoiService } from '../../../services/poi.service';
 
 @Component({
   selector: 'app-poi-dialog',
-  templateUrl: './poi-dialog.component.html',
-  styleUrls: ['./poi-dialog.component.css']
+  templateUrl: './add-poi-dialog.component.html',
+  styleUrls: ['./add-poi-dialog.component.css']
 })
 export class AddPoiDialogComponent {
   public newPoi: POI;

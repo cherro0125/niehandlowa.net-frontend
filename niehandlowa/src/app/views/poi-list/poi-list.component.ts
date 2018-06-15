@@ -14,9 +14,9 @@ export class PoiListComponent implements OnInit {
 
   ngOnInit() {
     this.poiList = [
-      // tslint:disable-next-line:max-line-length
-      {  id: 1 , name: 'Biedronka' , address: 'Żelazna 2' , owner: 'Janusz Nosacz'  , description: 'Wincyj bimbru' },
-      {  id: 1 , name: 'Biedronka' , address: 'Żelazna 2' , owner: 'Janusz Nosacz'  , description: 'Wincyj bimbru' }
+      // // tslint:disable-next-line:max-line-length
+      // {  id: 1 , name: 'Biedronka' , address: 'Żelazna 2' , owner: 'Janusz Nosacz'  , description: 'Wincyj bimbru' },
+      // {  id: 1 , name: 'Biedronka' , address: 'Żelazna 2' , owner: 'Janusz Nosacz'  , description: 'Wincyj bimbru' }
     ];
   }
 
