@@ -8,11 +8,12 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  images: Array<string>;
 
-  constructor(private _http: HttpClient) {}
+
+  constructor() {}
 
   ngOnInit() {
+
   }
 
 }
