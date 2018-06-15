@@ -6,9 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  title: string = 'Niehandlowa.net';
-  lat: number = 51;
-  lng: number = 7;
+  AgmInfoWindow
 
   constructor() { }
 
