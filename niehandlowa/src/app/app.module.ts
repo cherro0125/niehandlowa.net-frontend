@@ -17,7 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import { MapViewComponent } from './views/map/map-view.component';
-import { AddPOIComponent } from './components/add-poi/add-poi.component';
+import { AddPOIComponent } from './views/add-poi/add-poi.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { MapService } from './services/map.service';
 
