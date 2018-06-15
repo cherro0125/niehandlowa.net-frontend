@@ -8,9 +8,10 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
+import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { ToastrModule } from 'ngx-toastr';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // components
 import { AppComponent } from './app.component';
@@ -31,13 +32,14 @@ import { AddPOIComponent } from './components/add-poi/add-poi.component';
     AppRoutingModule,
     HttpClientModule,
     MatInputModule,
+    MatButtonModule,
+    MatIconModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDKTZ15_EjqEOLG4e72RR4R3XrCfykOXb8'
     }),
     NgbModule.forRoot(),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
