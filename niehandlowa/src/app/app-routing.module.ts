@@ -10,8 +10,8 @@ import { MapViewComponent } from './views/map-view/map-view.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'map', component: MapComponent },
-  {path: 'add', component: AddPOIComponent}
+  { path: 'map', component: MapViewComponent },
+  { path: 'add', component: AddPOIComponent }
 ];
 
 @NgModule({

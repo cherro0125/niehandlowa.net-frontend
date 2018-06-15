@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { MatInputModule } from '@angular/material/input';
 import { ToastrModule } from 'ngx-toastr';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // components
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { AddPOIComponent } from './components/add-poi/add-poi.component';
     }),
     NgbModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
