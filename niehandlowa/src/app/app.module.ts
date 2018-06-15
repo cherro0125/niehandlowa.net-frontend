@@ -11,6 +11,7 @@ import { AgmCoreModule } from '@agm/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ToastrModule } from 'ngx-toastr';
 
 // components
@@ -21,6 +22,8 @@ import { AddPOIComponent } from './views/add-poi/add-poi.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
 import { MapService } from './services/map.service';
 import { PoiListComponent } from './views/poi-list/poi-list.component';
+import { PoiDialogComponent } from './views/poi-dialog/poi-dialog.component';
+import { AddPoiDialogComponent } from './views/dialogs/add-poi-dialog/add-poi-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { PoiListComponent } from './views/poi-list/poi-list.component';
     MapViewComponent,
     AddPOIComponent,
     LandingPageComponent,
-    PoiListComponent
+    PoiListComponent,
+    PoiDialogComponent,
+    AddPoiDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { PoiListComponent } from './views/poi-list/poi-list.component';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDKTZ15_EjqEOLG4e72RR4R3XrCfykOXb8'
     }),
@@ -46,7 +52,7 @@ import { PoiListComponent } from './views/poi-list/poi-list.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [MapService],
+  providers: [MapService, PoiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

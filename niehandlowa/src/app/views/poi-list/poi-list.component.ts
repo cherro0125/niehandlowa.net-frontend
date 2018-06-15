@@ -12,4 +12,8 @@ export class PoiListComponent implements OnInit {
   ngOnInit() {
   }
 
+  addPoiOnClick() {
+    let dialog = dialog.open(poi)
+  }
+
 }
