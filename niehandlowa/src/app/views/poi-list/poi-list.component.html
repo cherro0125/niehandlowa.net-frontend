@@ -35,19 +35,22 @@
 </table>
 
  -->
- <div class="static-logo">
-  <span style="font-weight: bold">NieHandlowa</span>.net
+<div class="static-logo">
+  <span style="font-weight: bold">NieHandlowa</span>.NET
 </div>
 
 <nav class="navigation welcome">
   <div class="control-box">
-<ul>
-      <li>
-        <a href="" >DODAJ</a>
-      </li>
+    <button class="nav-button" mat-fab color="default">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button class="nav-button" mat-fab color="default">
+      <mat-icon>shop</mat-icon>
+    </button>
+    <button class="nav-button" mat-fab color="default">
+      <mat-icon>favorite</mat-icon>
+    </button>
 
-
-    </ul>
   </div>
 </nav>
 
@@ -66,11 +69,6 @@
 
     <div class="content">
       <table mat-table [dataSource]="poiList" class="mat-elevation-z8">
-
-
-
-
-
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Nazwa </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
@@ -89,7 +87,8 @@
 
         <ng-container matColumnDef="openHours">
           <th mat-header-cell *matHeaderCellDef> Godziny otwarcia </th>
-          <td mat-cell *matCellDef="let element"> {{element.openingHours[0].openingTime.toLocaleTimeString()}} - {{element.openingHours[0].closingTime.toLocaleTimeString()}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.openingHours[0].openingTime.toLocaleTimeString()}} - {{element.openingHours[0].closingTime.toLocaleTimeString()}}
+          </td>
         </ng-container>
 
         <ng-container matColumnDef="description">
@@ -99,7 +98,9 @@
 
         <ng-container matColumnDef="other">
           <th mat-header-cell *matHeaderCellDef> Opcje </th>
-          <td mat-cell *matCellDef="let element"> <button mat-button>WIĘCEJ</button> </td>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button>WIĘCEJ</button>
+          </td>
         </ng-container>
 
 
