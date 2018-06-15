@@ -20,7 +20,7 @@ import { AddPOIComponent } from './components/add-poi/add-poi.component';
   declarations: [
     AppComponent,
     MapComponent,
-    MapViewComponent
+    MapViewComponent,
     AddPOIComponent
   ],
   imports: [
