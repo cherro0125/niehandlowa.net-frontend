@@ -7,6 +7,7 @@ export default class POI {
   public latitude: number;
   public days: Array<number>;
   public hoursOpen: Array<number>;
+  public description: string;
 
 
 }
