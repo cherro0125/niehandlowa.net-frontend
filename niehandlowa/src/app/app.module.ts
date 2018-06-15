@@ -12,7 +12,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatTableModule } from '@angular/material/table';
 import { ToastrModule } from 'ngx-toastr';
+import {CdkTableModule} from '@angular/cdk/table';
+import {MatCardModule} from '@angular/material/card';
 
 // components
 import { AppComponent } from './app.component';
@@ -42,12 +45,15 @@ import { PoiService } from './services/poi.service';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatTableModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDKTZ15_EjqEOLG4e72RR4R3XrCfykOXb8'
     }),
     NgbModule.forRoot(),
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    CdkTableModule
   ],
   providers: [MapService, PoiService],
   bootstrap: [AppComponent]
