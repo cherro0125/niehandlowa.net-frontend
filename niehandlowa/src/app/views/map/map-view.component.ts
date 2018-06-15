@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MapService } from '../../services/map.service';
 
 @Component({
   selector: 'app-map-view',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map-view.component.css']
 })
 export class MapViewComponent implements OnInit {
+  public adress: string;
 
-  constructor() { }
+  constructor(private _mapService: MapService) {
+  }
 
   ngOnInit() {
   }
 
+  searchButtonOnClick() {
+    alert(this.adress)
+    // this._mapService.getCoordsByAdress(this.adress)
+    //   .subscribe(data => alert(JSON.stringify(data)));
+  }
 }

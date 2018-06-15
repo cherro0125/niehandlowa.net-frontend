@@ -19,6 +19,7 @@ import { MapComponent } from './components/map/map.component';
 import { MapViewComponent } from './views/map/map-view.component';
 import { AddPOIComponent } from './components/add-poi/add-poi.component';
 import { LandingPageComponent } from './views/landing-page/landing-page.component';
+import { MapService } from './services/map.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { LandingPageComponent } from './views/landing-page/landing-page.componen
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [MapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
