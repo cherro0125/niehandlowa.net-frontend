@@ -8,22 +8,25 @@
     public description: string,
     public openDate: Date,
     public closeDate: Date -->
-  <div style="display:inline-grid;">
+  <div style="display:inline-grid;margin-left: 45%;margin-right: auto;">
     <mat-form-field class="example-full-width">
       <label for="name">Nazwa:</label>
       <input matInput type="text" name="name" id="name" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <label for="address">Adres</label>
+      <label for="address">Adres:</label>
       <input matInput type="text" name="address" id="address" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <label for="owner">Właściciel</label>
+      <label for="owner">Właściciel:</label>
       <input matInput type="text" name="owner" id="owner" required>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput type="text" name="description" id="description">
+      <label for="description">Opis:</label>
+      <textarea matInput name="description" id="description"></textarea>
     </mat-form-field>
+
+    <button>CLICK</button>
 
 
 

@@ -8,10 +8,10 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddPOIComponent implements OnInit {
 
-  constructor(private toastr: ToastrService) { }
+  constructor(private _toastr: ToastrService) { }
 
   ngOnInit() {
-    this.toastr.success('Hello world!', 'Toastr fun!');
+    //setTimeout(() => this._toastr.success('Kurłaaa','Janusz Notification!'));
   }
 
 }
