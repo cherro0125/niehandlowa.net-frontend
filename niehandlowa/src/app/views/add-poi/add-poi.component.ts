@@ -16,12 +16,13 @@ export class AddPOIComponent implements OnInit {
    }
 
   ngOnInit() {
-    // setTimeout(() => this._toastr.success('Kurłaaa','Janusz Notification!'));
+    // setTimeout(() => this._toastr.success('d', 'Janusz Notification!'));
 
   }
 
   public onSubmit() {
     console.log(this.newPOI);
+    setTimeout(() => this._toastr.success(this.newPOI.name, 'Nazwa:'));
   }
 
 }

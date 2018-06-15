@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AddPOIComponent } from './components/add-poi/add-poi.component';
+import { AddPOIComponent } from './views/add-poi/add-poi.component';
 
 // components
 import { MapViewComponent } from './views/map/map-view.component';
