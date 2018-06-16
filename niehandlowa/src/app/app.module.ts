@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, forwardRef } from '@angular/core';
 
 // modules
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NG_VALUE_ACCESSOR, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
@@ -75,11 +75,9 @@ import { MorePoiDialogComponent } from './views/dialogs/more-poi-dialog/more-poi
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
     HttpClientModule,
     MatNativeDateModule,
     BrowserModule,
-    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     MatInputModule,
@@ -90,6 +88,10 @@ import { MorePoiDialogComponent } from './views/dialogs/more-poi-dialog/more-poi
     MatCardModule,
     MatOptionModule,
     MatSelectModule,
+    MatStepperModule,
+    MatExpansionModule,
+    FormsModule,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDKTZ15_EjqEOLG4e72RR4R3XrCfykOXb8'
     }),

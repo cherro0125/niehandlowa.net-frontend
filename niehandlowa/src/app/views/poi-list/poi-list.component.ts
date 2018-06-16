@@ -57,7 +57,7 @@ export class PoiListComponent implements OnInit {
     }
 
     public advancedButtonOnClick() {
-        this._show = true;
+        this._show = !this._show;
     }
 
     morePoiOnClick(selectpoi: POI) {
