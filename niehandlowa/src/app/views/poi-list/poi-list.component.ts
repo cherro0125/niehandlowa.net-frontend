@@ -5,6 +5,7 @@ import { AddPoiDialogComponent } from '../dialogs/add-poi-dialog/add-poi-dialog.
 import { PoiService } from '../../services/poi.service';
 import { MapService } from '../../services/map.service';
 import { MorePoiDialogComponent } from '../dialogs/more-poi-dialog/more-poi-dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 const lat = 50.900218;
 const lng = 20.586800;
@@ -28,7 +29,8 @@ export class PoiListComponent implements OnInit {
     constructor(
         public dialog: MatDialog,
         public _poiService: PoiService,
-        public _mapService: MapService) {
+        public _mapService: MapService,
+        public _toastrService: ToastrService) {
         this.newPoi = new POI();
     }
 
@@ -47,23 +49,45 @@ export class PoiListComponent implements OnInit {
         dialogRef.afterClosed().subscribe(result => {
             if (result !== undefined) {
                 this._poiService.getListSortedByDistance(lat, lng).subscribe(data => {
-                    this.poiList = data;
+                    this.poiListDataSource = data;
                 });
             }
         });
     }
 
     public searchButtonOnClick() {
-        if (!this._show) {
-            this.poiListDataSource = this.poiList.filter(poi => poi.name.toLowerCase().startsWith(this._search.toLowerCase()));
-        } else {
+        if (this._show) {
             this._mapService.getCoordsByAdress(this._search).subscribe(data => {
                 this._poiService.getListSortedByDistance(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng)
                     .subscribe(result => {
                         this.poiList = result;
                     });
             });
+        } else {
+            this.poiListDataSource = this.poiList.filter(poi => poi.name.toLowerCase().startsWith(this._search.toLowerCase()));
         }
+    }
+
+    public like($event: any) {
+        this._poiService.getById($event.currentTarget.id).subscribe(poi => {
+            this._poiService.like(poi).subscribe(data => {
+                this._poiService.getAll().subscribe(poiArray => {
+                    this.poiListDataSource = poiArray;
+                });
+            });
+            this._toastrService.error(`+1 dla ${poi.name}`);
+        });
+    }
+
+    public dislike($event: any) {
+        this._poiService.dislike($event.currentTarget.id).subscribe(data => {
+            this._poiService.getById(data).subscribe(poi => {
+                this._toastrService.error(`-1 dla ${poi.name}`);
+                this._poiService.getAll().subscribe(poiArray => {
+                    this.poiListDataSource = poiArray;
+                });
+            });
+        });
     }
 
     public advancedButtonOnClick() {
