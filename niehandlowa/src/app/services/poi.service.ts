@@ -21,11 +21,11 @@ export class PoiService extends AbstractService {
       }
       typesToGet += `${types[i]},`;
     }
-    return this._http.get<POI[]>(`${environment.apiUrl}/poi/getbytypes/`);
+    return this._http.get<POI[]>(`http://${environment.apiUrl}/poi/getbytypes/`);
   }
 
   public getById(id: number): Observable<POI> {
-    return this._http.get<POI>(`${environment.apiUrl}/poi/get/${id}`)
+    return this._http.get<POI>(`http://${environment.apiUrl}/poi/get/${id}`)
   }
 
   public getAll(): Observable<POI[]> {
@@ -33,6 +33,6 @@ export class PoiService extends AbstractService {
   }
 
   public addPoi(poiToAdd: POI): Observable<POI> {
-    return this._http.post<POI>(`${environment.apiUrl}/poi/create`, poiToAdd);
+    return this._http.post<POI>(`http://${environment.apiUrl}/poi/create`, poiToAdd);
   }
 }
