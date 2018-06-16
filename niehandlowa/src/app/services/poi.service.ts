@@ -39,4 +39,8 @@ export class PoiService extends AbstractService {
   public getNearestByCoords(lat: number, lng: number, distance: number): Observable<POI[]> {
     return this._http.get<POI[]>(`http://${environment.apiUrl}/poi/GetPOIsWithinDistance/${lat}/${lng}/${distance}`)
   }
+
+  public getListSortedByDistance(lat: number, lng: number): Observable<POI[]> {
+    return this._http.get<POI[]>(`http://${environment.apiUrl}/poi/GetPOIsSortedByDistanceFromCoordinates/${lat}/${lng}`)
+  }
 }

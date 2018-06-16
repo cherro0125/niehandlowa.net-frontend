@@ -3,6 +3,7 @@ import { POI } from '../../models/POI';
 import { MatDialog } from '@angular/material/dialog';
 import { AddPoiDialogComponent } from '../dialogs/add-poi-dialog/add-poi-dialog.component';
 import { PoiService } from '../../services/poi.service';
+import { MapService } from '../../services/map.service';
 
 @Component({
     selector: 'app-poi-list',
@@ -11,13 +12,14 @@ import { PoiService } from '../../services/poi.service';
 })
 export class PoiListComponent implements OnInit {
     public poiList: POI[];
-    public searchPoiName: string;
+    public search: string;
     public newPoi: POI;
     displayedColumns = ['name', 'address', 'description', 'other'];
 
     constructor(
         public dialog: MatDialog,
-        private _poiService: PoiService) {
+        private _poiService: PoiService,
+        private _mapService: MapService) {
         this.newPoi = new POI();
     }
 
@@ -42,5 +44,11 @@ export class PoiListComponent implements OnInit {
     }
 
     public searchButtonOnClick() {
+        this._mapService.getCoordsByAdress(this.search).subscribe(data => {
+            this._poiService.getListSortedByDistance(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng)
+                .subscribe(result => {
+                    this.poiList = result;
+                });
+        });
     }
 }
