@@ -64,30 +64,9 @@ export class PoiListComponent implements OnInit {
                     });
             });
         } else {
-            this.poiListDataSource = this.poiList.filter(poi => poi.name.toLowerCase().startsWith(this._search.toLowerCase()));
+
+            this.poiListDataSource = this.poiList.filter(poi => poi.name != undefined && poi.name.toLowerCase().startsWith(this._search.toLowerCase()));
         }
-    }
-
-    public like($event: any) {
-        this._poiService.getById($event.currentTarget.id).subscribe(poi => {
-            this._poiService.like(poi).subscribe(data => {
-                this._poiService.getAll().subscribe(poiArray => {
-                    this.poiListDataSource = poiArray;
-                });
-            });
-            this._toastrService.error(`+1 dla ${poi.name}`);
-        });
-    }
-
-    public dislike($event: any) {
-        this._poiService.dislike($event.currentTarget.id).subscribe(data => {
-            this._poiService.getById(data).subscribe(poi => {
-                this._toastrService.error(`-1 dla ${poi.name}`);
-                this._poiService.getAll().subscribe(poiArray => {
-                    this.poiListDataSource = poiArray;
-                });
-            });
-        });
     }
 
     public advancedButtonOnClick() {
