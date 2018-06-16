@@ -13,7 +13,7 @@ export class PoiListComponent implements OnInit {
     public poiList: POI[];
     public searchPoiName: string;
     public newPoi: POI;
-    displayedColumns = ['name', 'address', 'owner', 'description', 'other'];
+    displayedColumns = ['name', 'address', 'description', 'other'];
 
     constructor(
         public dialog: MatDialog,
