@@ -16,41 +16,41 @@ export class MorePoiDialogComponent implements OnInit {
   ) {
   }
 
-  private iterator: number = 1;
+  // private iterator: number = 1;
 
-  private _days: string[] =
-    [{ number: 1, name: 'Poniedziałek' },
-    { number: 2, name: 'Wtorek' },
-    { number: 3, name: 'Środa' },
-    { number: 4, name: 'Czwartek' },
-    { number: 5, name: 'Piątek' },
-    { number: 6, name: 'Sobota' },
-    { id: 7, name: 'Sobota' },
-    { id: 8, name: 'Niedziela' },
-    { id: 9, name: 'Niedziela (niehandlowa)' }];
+  // private _days: string[] =
+  //   [{ number: 1, name: 'Poniedziałek' },
+  //   { number: 2, name: 'Wtorek' },
+  //   { number: 3, name: 'Środa' },
+  //   { number: 4, name: 'Czwartek' },
+  //   { number: 5, name: 'Piątek' },
+  //   { number: 6, name: 'Sobota' },
+  //   { id: 7, name: 'Sobota' },
+  //   { id: 8, name: 'Niedziela' },
+  //   { id: 9, name: 'Niedziela (niehandlowa)' }];
 
   ngOnInit() {
-    this.poi = this.data.poi;
+    // this.poi = this.data.poi;
 
 
-    let j = 1;
-    for (let i = 0; i < 8; i++) {
-      if (this.poi.openingHours[i] === undefined) {
-        this.poi.openingHours[i] = { dayOfWeek: j, openingTime: undefined, closingTime: undefined };
-        // this.poi.openingHours[i].dayOfWeek = j;
-        // this.poi.openingHours[i].openingTime = undefined;
-        // this.poi.openingHours[i].closingTime = undefined;
-        j++;
+    // let j = 1;
+    // for (let i = 0; i < 8; i++) {
+    //   if (this.poi.openingHours[i] === undefined) {
+    //     this.poi.openingHours[i] = { dayOfWeek: j, openingTime: undefined, closingTime: undefined };
+    //     // this.poi.openingHours[i].dayOfWeek = j;
+    //     // this.poi.openingHours[i].openingTime = undefined;
+    //     // this.poi.openingHours[i].closingTime = undefined;
+    //     j++;
 
-      } else {
-        j = this.poi.openingHours[i].dayOfWeek + 1;
-      }
+    //   } else {
+    //     j = this.poi.openingHours[i].dayOfWeek + 1;
+    //   }
 
-    }
-    this.poi.openingHours.sort((a, b) => {
-      return a.dayOfWeek < b.dayOfWeek ? a.dayOfWeek : b.dayOfWeek;
-    }).reverse();
-    console.log(this.poi.openingHours);
+    // }
+    // this.poi.openingHours.sort((a, b) => {
+    //   return a.dayOfWeek < b.dayOfWeek ? a.dayOfWeek : b.dayOfWeek;
+    // }).reverse();
+    // console.log(this.poi.openingHours);
 
   }
   closeDialog() {

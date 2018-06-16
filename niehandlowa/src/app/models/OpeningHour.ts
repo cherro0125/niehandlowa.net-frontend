@@ -1,4 +1,4 @@
-export interface OpeningHour {
+export class OpeningHour {
     id?: number;
     dayOfWeek: number;
     openingTime: Date;
