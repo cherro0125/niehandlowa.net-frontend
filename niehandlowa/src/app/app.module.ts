@@ -57,6 +57,7 @@ import { MapService } from './services/map.service';
 import { PoiListComponent } from './views/poi-list/poi-list.component';
 import { AddPoiDialogComponent } from './views/dialogs/add-poi-dialog/add-poi-dialog.component';
 import { PoiService } from './services/poi.service';
+import { MorePoiDialogComponent } from './views/dialogs/more-poi-dialog/more-poi-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PoiService } from './services/poi.service';
     MapViewComponent,
     LandingPageComponent,
     PoiListComponent,
-    AddPoiDialogComponent
+    AddPoiDialogComponent,
+    MorePoiDialogComponent
   ],
   entryComponents: [
     AddPoiDialogComponent

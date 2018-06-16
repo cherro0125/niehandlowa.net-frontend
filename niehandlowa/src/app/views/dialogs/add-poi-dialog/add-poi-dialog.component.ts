@@ -13,10 +13,12 @@ export class AddPoiDialogComponent {
   public newPoi: POI = new POI();
 
   public _types: { value: number, name: string }[] = [{
+    // tslint:disable-next-line:quotemark
     value: 1, name: "Sklep",
   }, {
+    // tslint:disable-next-line:quotemark
     value: 2, name: "Galeria handlowa"
-  }]
+  }];
 
   constructor(
     public dialogRef: MatDialogRef<AddPoiDialogComponent>,
