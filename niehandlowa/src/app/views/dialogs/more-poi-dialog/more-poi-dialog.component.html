@@ -7,16 +7,16 @@
 
     <mat-tab label="Szczegóły:">
 
-      <h3>Opis</h3>
+      <h3 class="tab-title">Opis</h3>
       <p>{{this.poi.desription}}</p>
     </mat-tab>
     <mat-tab label="Godziny otwarcia:">
 
-      <h3>Godziny otwarcia:</h3>
+      <h3 class="tab-title">Godziny otwarcia:</h3>
       <p class="hours_open">
           <span class="static">Godziny otwarcia: </span>
           <br>
-          <ng-container *ngFor="let openingHours of this.poi.openingHours">
+          <ng-container class="hours_item" *ngFor="let openingHours of this.poi.openingHours">
             <ng-container [ngSwitch]="openingHours.dayOfWeek">
               <span *ngSwitchCase="1">Pon. </span>
               <span *ngSwitchCase="2">Wt. </span>

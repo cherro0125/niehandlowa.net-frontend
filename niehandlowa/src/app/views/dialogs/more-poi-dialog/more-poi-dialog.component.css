@@ -76,5 +76,18 @@
   background: white;
 }
 .hours_open{
-  padding: 10px !important;
+  margin: 50px;
+  padding: 50px;
+}
+
+.hours_item{
+  padding: 25px !important;
+  margin: 50px !important;
+}
+
+.tab-title{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
