@@ -22,7 +22,7 @@ export class PoiListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._poiService.getAll().subscribe(data => {
+        this._poiService.getAll().subscribe(data => {   
             this.poiList = data;
         });
     }

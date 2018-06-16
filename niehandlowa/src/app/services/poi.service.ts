@@ -29,7 +29,7 @@ export class PoiService extends AbstractService {
   }
 
   public getAll(): Observable<POI[]> {
-    return this._http.get<POI[]>(`${environment.apiUrl}/poi/getall`)
+    return this._http.get<POI[]>(`http://${environment.apiUrl}/poi/getall`)
   }
 
   public addPoi(poiToAdd: POI): Observable<POI> {
