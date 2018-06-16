@@ -59,15 +59,18 @@
     <div class="search-bar">
       <mat-form-field appearance="outline" class="search-field">
         <mat-label>Szukaj</mat-label>
-        <input [(ngModel)]="search" matInput placeholder="Szukaj">
-        <button (click)="showAdvanced()" mat-icon-button matPrefix color="primary">
-          <mat-icon>build</mat-icon>
-        </button>
+        <input [(ngModel)]="this._search" matInput placeholder="Szukaj">
         <button (click)="searchButtonOnClick()" mat-icon-button matSuffix color="primary">
           <mat-icon>search</mat-icon>
         </button>
+        <mat-hint (click)="advancedButtonOnClick()">Zaawansowane</mat-hint>
       </mat-form-field>
-
+      <div *ngIf="this._show">
+        <mat-form-field appearance="outline" class="search-field">
+          <mat-label>Szukaj</mat-label>
+          <input [(ngModel)]="this._distance" matInput type="number" placeholder="Dystans">
+        </mat-form-field>
+      </div>
     </div>
 
     <div class="content">

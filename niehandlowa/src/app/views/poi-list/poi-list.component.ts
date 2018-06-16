@@ -12,8 +12,11 @@ import { MapService } from '../../services/map.service';
 })
 export class PoiListComponent implements OnInit {
     public poiList: POI[];
-    public search: string;
     public newPoi: POI;
+
+    private _search: string;
+    private _show: boolean;
+
     displayedColumns = ['name', 'address', 'description', 'other'];
 
     constructor(
@@ -44,11 +47,15 @@ export class PoiListComponent implements OnInit {
     }
 
     public searchButtonOnClick() {
-        this._mapService.getCoordsByAdress(this.search).subscribe(data => {
+        this._mapService.getCoordsByAdress(this._search).subscribe(data => {
             this._poiService.getListSortedByDistance(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng)
                 .subscribe(result => {
                     this.poiList = result;
                 });
         });
+    }
+
+    public advancedButtonOnClick() {
+        this._show = true;
     }
 }
