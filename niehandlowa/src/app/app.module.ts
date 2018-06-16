@@ -46,7 +46,7 @@ import {
   MatTabsModule,
   MatToolbarModule,
   MatTooltipModule,
-  MatTreeModule,
+  MatTreeModule
 } from '@angular/material';
 
 // components
@@ -90,6 +90,7 @@ import { MorePoiDialogComponent } from './views/dialogs/more-poi-dialog/more-poi
     MatSelectModule,
     MatStepperModule,
     MatExpansionModule,
+    MatTabsModule,
     FormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
