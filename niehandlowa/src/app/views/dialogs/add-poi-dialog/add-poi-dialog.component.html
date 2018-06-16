@@ -12,33 +12,17 @@
     <input matInput [(ngModel)]="data.poi.name" type="text" placeholder="Nazwa">
   </mat-form-field>
   <mat-form-field>
-    <mat-label>Właściciel</mat-label>
-    <input matInput [(ngModel)]="data.poi.owner" type="text" placeholder="Właściciel">
-  </mat-form-field>
-  <mat-form-field>
     <mat-label>Opis</mat-label>
     <textarea matInput [(ngModel)]="data.poi.description" placeholder="Opis"></textarea>
   </mat-form-field>
   <br>
   <mat-form-field>
-    <mat-label>Nazwa</mat-label>
+    <mat-label>Typ miejsca</mat-label>
     <mat-select placeholder="Typ miejsca">
       <mat-option *ngFor="let type of this._types" [value]="type.value" [(ngModel)]="data.poi.type">
         {{type.name}}
       </mat-option>
     </mat-select>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Adres</mat-label>
-    <input matInput [(ngModel)]="data.poi.address" type="text" placeholder="Adres">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Właściciel</mat-label>
-    <input matInput [(ngModel)]="data.poi.owner" type="text" placeholder="Właściciel">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Opis</mat-label>
-    <textarea matInput [(ngModel)]="data.poi.description" placeholder="Opis"></textarea>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
