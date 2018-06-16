@@ -85,17 +85,18 @@
   color: #242424;
   background: white;
 }
-.hours_open{
+
+.hours_open {
   margin: 50px;
   padding: 50px;
 }
 
-.hours_item{
+.hours_item {
   padding: 25px !important;
   margin: 50px !important;
 }
 
-.tab-title{
+.tab-title {
   margin-top: 25px;
   margin-bottom: 25px;
   margin-left: 25px;

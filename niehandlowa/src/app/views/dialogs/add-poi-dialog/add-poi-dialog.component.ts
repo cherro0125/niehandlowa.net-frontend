@@ -19,7 +19,8 @@ export class AddPoiDialogComponent {
       value: 1, name: 'Sklep',
     }, {
       value: 2, name: 'Galeria handlowa'
-    }];
+    },
+    { value: 3, name: 'Stacja benzynowa' }];
 
   public firstFormGroup: FormGroup;
   public secondFormGroup: FormGroup;

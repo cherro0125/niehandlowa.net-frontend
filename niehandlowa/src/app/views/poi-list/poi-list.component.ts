@@ -23,7 +23,7 @@ export class PoiListComponent implements OnInit {
     public _search: string;
     public _show: boolean;
 
-    displayedColumns = ['name', 'address', 'description', 'other'];
+    displayedColumns = ['name', 'address', 'description', 'other', 'like', 'dislike', 'bilans'];
 
     constructor(
         public dialog: MatDialog,
@@ -72,7 +72,8 @@ export class PoiListComponent implements OnInit {
 
     morePoiOnClick(selectpoi: POI) {
         const dialogRef = this.dialog.open(MorePoiDialogComponent, {
-            data: { poi: selectpoi }
+            data: { poi: selectpoi },
+            height: '60vh'
         });
 
     }
