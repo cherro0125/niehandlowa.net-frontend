@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddPoiDialogComponent } from '../dialogs/add-poi-dialog/add-poi-dialog.component';
 import { PoiService } from '../../services/poi.service';
 import { MapService } from '../../services/map.service';
+import { MorePoiDialogComponent } from '../dialogs/more-poi-dialog/more-poi-dialog.component';
 
 @Component({
     selector: 'app-poi-list',
@@ -41,7 +42,7 @@ export class PoiListComponent implements OnInit {
             if (result !== undefined) {
                 this._poiService.getAll().subscribe(data => {
                     this.poiList = data;
-                })
+                });
             }
         });
     }
@@ -58,4 +59,11 @@ export class PoiListComponent implements OnInit {
     public advancedButtonOnClick() {
         this._show = true;
     }
+
+    morePoiOnClick(selectpoi: POI) {
+      const dialogRef = this.dialog.open(MorePoiDialogComponent, {
+          data: { poi: selectpoi }
+      });
+
+  }
 }

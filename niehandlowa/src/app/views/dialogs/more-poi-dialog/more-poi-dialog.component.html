@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>
-  Dodaj punkt
+  Szczegóły
 </h1>
 <div mat-dialog-content>
    <mat-card-header class="matCardHeader">
@@ -10,7 +10,7 @@
 
         <div class="informations">
           <div class="matCardTitle">
-            <mat-card-title>Biedronka</mat-card-title>
+            <mat-card-title>{{this.poi.name}}</mat-card-title>
           </div>
 
           <div class="matCardSubtitle">
@@ -19,7 +19,26 @@
               <mat-card-subtitle>Janusz Nosacz</mat-card-subtitle> -->
 
               <br/>
-              <span class="static">Godziny otwarcia: </span> 08:00 - 22:00
+              <span class="static">Godziny otwarcia: </span><br>
+              <ng-container *ngFor="let openingHours of this.poi.openingHours">
+                <ng-container [ngSwitch]="openingHours.dayOfWeek">
+                  <span *ngSwitchCase="1">Pon.</span>
+                  <span *ngSwitchCase="2">Wt.</span>
+                  <span *ngSwitchCase="3">Śr.</span>
+                  <span *ngSwitchCase="4">Czw.</span>
+                  <span *ngSwitchCase="5">Pt.</span>
+                  <span *ngSwitchCase="6">Sob.</span>
+                  <span *ngSwitchCase="7">Niedz.</span>
+                  <span *ngSwitchCase="8">Niedz(niehandlowa).</span>
+                </ng-container>
+                <ng-container [ngSwitch]="openingHours.openingTime">
+                    <span *ngSwitchCase="undefined">Zamknięte</span>
+               <span *ngSwitchDefault>{{openingHours.openingTime | date:'h:mm'}} - {{openingHours.closingTime | date:'h:mm'}}</span>
+                <br>
+               </ng-container>
+              </ng-container>
+
+
             </p>
           </div>
         </div>
@@ -32,8 +51,7 @@
       <mat-card-content class="matCardContent">
         <div class="description">
           <p>
-            Sieć sklepów należąca do spółki akcyjnej Nosacze Polska, której właścicielem jest portugalskie konsorcjum Janusz Nosacz.
-            Biedronka generuje 65% dochodów JMP
+            {{this.poi.desription}}
           </p>
         </div>
       </mat-card-content>

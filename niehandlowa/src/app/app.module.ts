@@ -69,7 +69,8 @@ import { MorePoiDialogComponent } from './views/dialogs/more-poi-dialog/more-poi
     MorePoiDialogComponent
   ],
   entryComponents: [
-    AddPoiDialogComponent
+    AddPoiDialogComponent,
+    MorePoiDialogComponent
   ],
   imports: [
     BrowserModule,
