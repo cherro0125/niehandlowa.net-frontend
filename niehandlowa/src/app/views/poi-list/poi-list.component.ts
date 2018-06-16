@@ -23,7 +23,7 @@ export class PoiListComponent implements OnInit {
     public _search: string;
     public _show: boolean;
 
-    displayedColumns = ['name', 'address', 'description', 'other'];
+    displayedColumns = ['name', 'address', 'description', 'type' , 'other'];
 
     constructor(
         public dialog: MatDialog,

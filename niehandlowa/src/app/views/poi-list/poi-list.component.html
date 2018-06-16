@@ -58,6 +58,17 @@
           <td mat-cell *matCellDef="let element"> {{element.desription}} </td>
         </ng-container>
 
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef> Typ </th>
+            <td mat-cell *matCellDef="let element">
+              <ng-container [ngSwitch]="element.type">
+                <span *ngSwitchCase="1">Sklep</span>
+                <span *ngSwitchCase="2">Galeria</span>
+                <span *ngSwitchCase="3">Stacja benzynowa</span>
+              </ng-container>
+            </td>
+          </ng-container>
+
         <ng-container matColumnDef="other">
           <th mat-header-cell *matHeaderCellDef> Opcje </th>
           <td mat-cell *matCellDef="let element">
