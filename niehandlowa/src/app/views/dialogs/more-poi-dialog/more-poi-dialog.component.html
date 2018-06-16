@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>
   Szczegóły -> {{this.poi.name}}
 </h1>
-<div mat-dialog-content>
+<div mat-dialog-content class="test">
 
   <mat-tab-group>
 
@@ -18,18 +18,18 @@
         <br>
         <ng-container class="hours_item" *ngFor="let openingHours of this.poi.openingHours">
           <ng-container [ngSwitch]="openingHours.dayOfWeek">
-            <span *ngSwitchCase="1">Pon. </span>
-            <span *ngSwitchCase="2">Wt. </span>
-            <span *ngSwitchCase="3">Śr. </span>
-            <span *ngSwitchCase="4">Czw. </span>
-            <span *ngSwitchCase="5">Pt. </span>
-            <span *ngSwitchCase="6">Sob. </span>
-            <span *ngSwitchCase="7">Niedz. </span>
-            <span *ngSwitchCase="8">Niedz(niehandlowa). </span>
+            <span class="label" *ngSwitchCase="1">Pon: </span>
+            <span class="label" *ngSwitchCase="2">Wt: </span>
+            <span class="label" *ngSwitchCase="3">Śr: </span>
+            <span class="label" *ngSwitchCase="4">Czw: </span>
+            <span class="label" *ngSwitchCase="5">Pt: </span>
+            <span class="label" *ngSwitchCase="6">Sob: </span>
+            <span class="label" *ngSwitchCase="7">Niedz: </span>
+            <span class="label" *ngSwitchCase="8">Niedz(niehandlowa): </span>
           </ng-container>
           <ng-container [ngSwitch]="openingHours.openingTime">
             <span *ngSwitchCase="undefined">Zamknięte</span>
-            <span *ngSwitchDefault>{{openingHours.openingTime | date:'h:mm'}} - {{openingHours.closingTime | date:'h:mm'}}</span>
+            <span *ngSwitchDefault>{{openingHours.openingTime | date:'H:mm'}} - {{openingHours.closingTime | date:'H:mm'}}</span>
             <br>
           </ng-container>
         </ng-container>
