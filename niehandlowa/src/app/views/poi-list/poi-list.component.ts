@@ -13,7 +13,7 @@ export class PoiListComponent implements OnInit {
     public poiList: POI[];
     public searchPoiName: string;
     public newPoi: POI;
-    displayedColumns = ['name', 'address', 'owner', 'description', 'openHours', 'other'];
+    displayedColumns = ['name', 'address', 'owner', 'description', 'other'];
 
     constructor(
         public dialog: MatDialog,
@@ -22,13 +22,13 @@ export class PoiListComponent implements OnInit {
     }
 
     ngOnInit() {
-        this._poiService.getAll().subscribe(data => {   
+        this._poiService.getAll().subscribe(data => {
             this.poiList = data;
         });
     }
 
     addPoiOnClick() {
-        let dialogRef = this.dialog.open(AddPoiDialogComponent, {
+        const dialogRef = this.dialog.open(AddPoiDialogComponent, {
             data: { poi: this.newPoi }
         });
 
