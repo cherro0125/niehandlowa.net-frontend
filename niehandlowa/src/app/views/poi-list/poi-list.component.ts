@@ -47,11 +47,9 @@ export class PoiListComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-            if (result !== undefined) {
-                this._poiService.getListSortedByDistance(lat, lng).subscribe(data => {
-                    this.poiListDataSource = data;
-                });
-            }
+            this._poiService.getListSortedByDistance(lat, lng).subscribe(data => {
+                this.poiListDataSource = data;
+            });
         });
     }
 
@@ -64,7 +62,6 @@ export class PoiListComponent implements OnInit {
                     });
             });
         } else {
-
             this.poiListDataSource = this.poiList.filter(poi => poi.name != undefined && poi.name.toLowerCase().startsWith(this._search.toLowerCase()));
         }
     }
