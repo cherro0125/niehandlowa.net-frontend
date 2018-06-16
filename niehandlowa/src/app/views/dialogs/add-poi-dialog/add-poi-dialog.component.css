@@ -1,4 +1,8 @@
-mat-form-field {
-  padding: 2vh;
-  min-width: 25vh;
+.input-text {
+  padding: 1vh;
+  min-width: 33.33vh;
+}
+
+mat-step {
+  height: 25vh;
 }
