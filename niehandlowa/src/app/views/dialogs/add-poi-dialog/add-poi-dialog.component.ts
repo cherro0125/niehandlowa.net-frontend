@@ -64,8 +64,6 @@ export class AddPoiDialogComponent {
       }
     }
 
-    alert(JSON.stringify(this.data.poi))
-
     this._poiService.addPoi(this.data.poi).subscribe(data => {
       setTimeout(() => this._toastrService.info(`Dodano lokalizacje ${this.data.poi.name}`, 'Sukces!'));
       this.closeDialog();

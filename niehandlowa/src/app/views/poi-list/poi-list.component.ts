@@ -21,7 +21,7 @@ export class PoiListComponent implements OnInit {
     public newPoi: POI;
 
     public _search: string;
-    public _show: boolean;
+    public _show: boolean = false;
 
     displayedColumns = ['name', 'address', 'description', 'type', 'other', 'like', 'dislike', 'bilans'];
 
