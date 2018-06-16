@@ -54,7 +54,7 @@ export class PoiListComponent implements OnInit {
     }
 
     public searchButtonOnClick() {
-        if (this._show) {
+        if (!this._show) {
             this.poiListDataSource = this.poiList.filter(poi => poi.name.toLowerCase().startsWith(this._search.toLowerCase()));
         } else {
             this._mapService.getCoordsByAdress(this._search).subscribe(data => {
