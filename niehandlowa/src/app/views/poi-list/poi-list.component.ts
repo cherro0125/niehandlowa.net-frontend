@@ -46,7 +46,7 @@ export class PoiListComponent implements OnInit {
 
         dialogRef.afterClosed().subscribe(result => {
             if (result !== undefined) {
-                this._poiService._poiService.getListSortedByDistance(lat, lng).subscribe(data => {
+                this._poiService.getListSortedByDistance(lat, lng).subscribe(data => {
                     this.poiList = data;
                 });
             }
