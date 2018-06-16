@@ -18,7 +18,7 @@ a {
   width: 1450px !important;
 }
 
-.navigation {
+.welcome-nav {
   z-index: 100;
   position: absolute;
   width: 100%;
@@ -31,7 +31,7 @@ a {
   max-height: 8vh;
 }
 
-.navigation .control-box {
+.welcome-nav .control-box {
   max-height: 8vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,12 +45,12 @@ a {
   justify-content: space-between;
 }
 
-.navigation .control-box ul {
+.welcome-nav .control-box ul {
   padding-top: 1vh !important;
   list-style-type: none;
 }
 
-.navigation .control-box ul li {
+.welcome-nav .control-box ul li {
   display: inline-block;
   padding: 0.4vh 2vh !important;
   background: rgba(0, 0, 0, 0.616);
@@ -63,21 +63,21 @@ a {
   margin: 0vh 0.5vh !important;
 }
 
-.navigation .control-box ul li a {
+.welcome-nav .control-box ul li a {
   -webkit-transition: color .3s linear;
   transition: color .3s linear;
   color: #ffffff;
 }
 
-.navigation .control-box ul li:hover {
+.welcome-nav .control-box ul li:hover {
   background: #ffffff;
 }
 
-.navigation .control-box ul li:hover a {
+.welcome-nav .control-box ul li:hover a {
   color: #000;
 }
 
-.navigation .control-box .logo {
+.welcome-nav .control-box .logo {
   display: inline-block;
   padding: 1vh 2.3vh !important;
   height: 6.5vh;
@@ -87,7 +87,7 @@ a {
   margin-top: -2vh !important;
 }
 
-.navigation .control-box .logo a {
+.welcome-nav .control-box .logo a {
   display: block;
   width: 100%;
   height: 100%;

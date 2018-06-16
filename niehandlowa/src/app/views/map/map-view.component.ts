@@ -28,10 +28,6 @@ export class MapViewComponent implements OnInit {
     this._mapService.getCoordsByAdress(this.adress)
       .subscribe(data => {
         if (data !== undefined) {
-          data.results.forEach(element => {
-            alert(element.geometry.location.lat);
-            alert(element.geometry.location.lng);
-          });
           if (data.results[0] !== undefined) {
             this.lat = data.results[0].geometry.location.lat;
             this.lng = data.results[0].geometry.location.lng;

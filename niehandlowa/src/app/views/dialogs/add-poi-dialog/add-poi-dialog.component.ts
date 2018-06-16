@@ -12,7 +12,7 @@ import { PoiService } from '../../../services/poi.service';
 export class AddPoiDialogComponent {
   public newPoi: POI = new POI();
 
-  private _types: { value: number, name: string }[] = [{
+  public _types: { value: number, name: string }[] = [{
     value: 1, name: "Sklep",
   }, {
     value: 2, name: "Galeria handlowa"

@@ -4,7 +4,6 @@ import { POIType } from './POIType';
 export class POI {
   id: number;
   name: string;
-  owner: string;
   address: string;
   latitude: number;
   longitude: number;
@@ -12,6 +11,6 @@ export class POI {
   openingHours: OpeningHour[];
   likesCount?: number;
   dislikesCount?: number;
-  description: string;
+  desription: string;
   image?: object;
 }
