@@ -25,17 +25,17 @@ export class AddPoiDialogComponent {
   public secondFormGroup: FormGroup;
   public thirdFormGroup: FormGroup;
 
-  private _opens: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
-  private _closes: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
+  public _opens: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
+  public _closes: number[] = [0, 0, 0, 0, 0, 0, 0, 0];
 
   constructor(
     public dialogRef: MatDialogRef<AddPoiDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private _toastrService: ToastrService,
-    private _poiService: PoiService,
-    private _formBuilder: FormBuilder) {
+    public _toastrService: ToastrService,
+    public _poiService: PoiService,
+    public _formBuilder: FormBuilder) {
 
-    data.poi.hoursOpen = [];
+    data.poi.openingHours = [];
 
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
@@ -54,17 +54,19 @@ export class AddPoiDialogComponent {
 
   addPoiOnClick() {
     for (let i: number; i < this._opens.length; i++) {
-      if (this._opens[i] != 0) {
+      if (this._opens[i] !== 0) {
         let hour: OpeningHour = new OpeningHour();
         hour.openingTime = new Date(0, 0, 0, this._opens[i]);
         hour.closingTime = new Date(0, 0, 0, this._closes[i]);
         hour.dayOfWeek = i;
-        this.data.poi.hoursOpen.push(hour);
+        this.data.poi.openingHours.push(hour);
       }
     }
 
-    this._poiService.addPoi(this.newPoi).subscribe(data => {
-      setTimeout(() => this._toastrService.info(`Dodano lokalizacje ${this.newPoi.name}`, 'Sukces!'));
+    alert(JSON.stringify(this.data.poi))
+
+    this._poiService.addPoi(this.data.poi).subscribe(data => {
+      setTimeout(() => this._toastrService.info(`Dodano lokalizacje ${this.data.poi.name}`, 'Sukces!'));
       this.closeDialog();
     });
   }

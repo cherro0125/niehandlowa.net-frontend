@@ -10,18 +10,25 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class MapViewComponent implements OnInit {
   public adress: string;
-
   public lat: number;
   public lng: number;
+  public zoom: number;
   public name: string;
 
   constructor(private _mapService: MapService,
-    private _toastr: ToastrService) {
+    public _toastr: ToastrService) {
   }
 
   ngOnInit() {
     this.lat = 50.8660773;
     this.lng = 20.6285676;
+    this.zoom = 15;
+  }
+
+  onMapRightClick($event) {
+    this.lat = $event.coords.lat;
+    this.lng = $event.coords.lng;
+
   }
 
   searchButtonOnClick() {
