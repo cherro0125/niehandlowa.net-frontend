@@ -1,7 +1,44 @@
 <h1 mat-dialog-title>
-  Szczegóły
+  Szczegóły -> {{this.poi.name}}
 </h1>
 <div mat-dialog-content>
+
+  <mat-tab-group>
+
+    <mat-tab label="Szczegóły:">
+
+      <h3>Opis</h3>
+      <p>{{this.poi.desription}}</p>
+    </mat-tab>
+    <mat-tab label="Godziny otwarcia:">
+
+      <h3>Godziny otwarcia:</h3>
+      <p class="hours_open">
+          <span class="static">Godziny otwarcia: </span>
+          <br>
+          <ng-container *ngFor="let openingHours of this.poi.openingHours">
+            <ng-container [ngSwitch]="openingHours.dayOfWeek">
+              <span *ngSwitchCase="1">Pon. </span>
+              <span *ngSwitchCase="2">Wt. </span>
+              <span *ngSwitchCase="3">Śr. </span>
+              <span *ngSwitchCase="4">Czw. </span>
+              <span *ngSwitchCase="5">Pt. </span>
+              <span *ngSwitchCase="6">Sob. </span>
+              <span *ngSwitchCase="7">Niedz. </span>
+              <span *ngSwitchCase="8">Niedz(niehandlowa). </span>
+            </ng-container>
+            <ng-container [ngSwitch]="openingHours.openingTime">
+              <span *ngSwitchCase="undefined">Zamknięte</span>
+              <span *ngSwitchDefault>{{openingHours.openingTime | date:'h:mm'}} - {{openingHours.closingTime | date:'h:mm'}}</span>
+              <br>
+            </ng-container>
+          </ng-container>
+      </p>
+    </mat-tab>
+  </mat-tab-group>
+
+
+<!--
   <mat-card-header class="matCardHeader">
 
     <div class="informations">
@@ -45,7 +82,7 @@
         {{this.poi.desription}}
       </p>
     </div>
-  </mat-card-content>
+  </mat-card-content>-->
 </div>
 
 <div mat-dialog-actions>
