@@ -1,40 +1,3 @@
-<!-- <mat-form-field appearance="outline" class="search-field">
-  <mat-label>Szukaj</mat-label>
-  <input [(ngModel)]="this.poiName" matInput placeholder="Nazwa">
-
-  <button (click)="searchButtonOnClick()" mat-icon-button matSuffix color="primary">
-    <mat-icon>search</mat-icon>
-  </button>
-</mat-form-field>
-
-<button (click)="addPoiOnClick()" mat-button color="primary">dodaj</button>
-
-<!-- <table mat-table [dataSource]="poiList" class="mat-elevation-z8">
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef> Nazwa </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="address">
-    <th mat-header-cell *matHeaderCellDef> Adres </th>
-    <td mat-cell *matCellDef="let element"> {{element.address}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="owner">
-    <th mat-header-cell *matHeaderCellDef> Własciciel </th>
-    <td mat-cell *matCellDef="let element"> {{element.owner}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="description">
-    <th mat-header-cell *matHeaderCellDef> Opis </th>
-    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
- -->
 <div class="static-logo">
   <span style="font-weight: bold">NieHandlowa</span>.NET
 </div>
@@ -60,24 +23,26 @@
       <mat-card>
         <mat-form-field appearance="outline" class="search-field">
           <mat-label>Szukaj</mat-label>
-          <input [(ngModel)]="this._search" matInput placeholder="Szukaj">
+          <input *ngIf="this._show" [(ngModel)]="this._search" matInput placeholder="Wprowadź nazwę...">
+          <input *ngIf="!this._show" [(ngModel)]="this._search" matInput placeholder="Wprowadź adres lokacji...">
           <button (click)="searchButtonOnClick()" mat-icon-button matSuffix color="primary">
             <mat-icon>search</mat-icon>
           </button>
           <mat-hint (click)="advancedButtonOnClick()">Zaawansowane</mat-hint>
         </mat-form-field>
         <div *ngIf="this._show">
-          <mat-form-field appearance="outline">
-            <mat-label>Szukaj</mat-label>
+          <mat-form-field appearance="outline" class="search-field">
+            <mat-label>Dystans</mat-label>
             <input [(ngModel)]="this._distance" matInput type="number" placeholder="Dystans">
           </mat-form-field>
+          <button mat-button (click)="this.provideMyLocation()">Wprowadź moją lokalizację</button>
         </div>
       </mat-card>
     </div>
 
 
     <div class="content">
-      <table mat-table [dataSource]="poiList" class="mat-elevation-z8">
+      <table mat-table [dataSource]="poiListDataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Nazwa </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>

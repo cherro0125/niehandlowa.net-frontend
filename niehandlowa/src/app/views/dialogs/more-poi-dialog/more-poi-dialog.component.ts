@@ -33,13 +33,12 @@ export class MorePoiDialogComponent implements OnInit {
       if (this.poi.openingHours[i] === undefined) {
         this.poi.openingHours[i] = { dayOfWeek: j, openingTime: undefined, closingTime: undefined };
         j++;
-
       } else {
         j = this.poi.openingHours[i].dayOfWeek + 1;
       }
-
     }
   }
+  
   closeDialog() {
     this.dialogRef.close();
 

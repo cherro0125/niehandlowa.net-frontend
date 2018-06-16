@@ -7,7 +7,7 @@
   </button>
 </mat-form-field>
 
-<agm-map [latitude]="this.lat" [longitude]="this.lng">
+<agm-map (mapRightClick)="onMapRightClick($event)" [latitude]="this.lat" [longitude]="this.lng" [zoom]="this.zoom">
   <agm-marker [latitude]="this.lat" [longitude]="this.lng">
     <agm-info-window [disableAutoPan]="true">
       {{this.name}}
